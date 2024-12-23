@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Salah Portfolio</title>
+    <style>
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            background-color: #ddd;
+            display: block;
+            margin: 0 auto;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .story {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .calculator {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .calculator input[type="number"] {
+            padding: 5px;
+            margin: 5px;
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .calculator button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background-color: #555;
+        }
+
+        .calculator .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ahmed Salah - Web Programmer</h1>
+    </header>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-image" id="profileImage"><img src="https://scontent.fcai19-8.fna.fbcdn.net/v/t39.30808-6/347600845_1681410712319123_2228999467124516399_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=HKD2_Fd3yl8Q7kNvgHb42jy&_nc_oc=AdifJzPt6xDTyAYys4mqC3ez4w2k-YGglauTb8txGV1BpRX6skMpkka99GRmf3EI3E8&_nc_zt=23&_nc_ht=scontent.fcai19-8.fna&_nc_gid=Ap9Z0_AESD2CAyyEJ0OzKDL&oh=00_AYAA02Hk-hS8tQJvNSTe-_PdSlclUmPVL80LyDvFwvBs4A&oe=676F6786" alt=""> <!-- Placeholder for image --> </div>
+        </div>
+        <div class="story">
+            <h2>My Programming Story</h2>
+            <p>Hi, I'm Ahmed Salah, a passionate web programmer with expertise in HTML, CSS, and JavaScript. I started my journey by experimenting with building simple websites and gradually mastered the art of creating dynamic and interactive web applications. Every project has been a step forward in perfecting my skills and delivering impactful web experiences.</p>
+        </div>
+        <div class="contact">
+            <h3>Contact Me</h3>
+            <p>Email: <a href="mailto:hamokshasalah@gmail.com">hamokshasalah@gmail.com</a></p>
+            <p>Phone: <a href="tel:01287827747">01287827747</a></p>
+        </div>
+        <div class="calculator">
+            <h2>Simple Calculator</h2>
+            <input type="number" id="num1" placeholder="Enter first number">
+            <input type="number" id="num2" placeholder="Enter second number">
+            <br>
+            <button onclick="calculate('+')">Add</button>
+            <button onclick="calculate('-')">Subtract</button>
+            <button onclick="calculate('*')">Multiply</button>
+            <button onclick="calculate('/')">Divide</button>
+            <div class="result" id="result">Result: </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let result;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                result = 'Please enter valid numbers.';
+            } else {
+                switch (operation) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero';
+                        break;
+                }
+            }
+
+            document.getElementById('result').innerText = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>
